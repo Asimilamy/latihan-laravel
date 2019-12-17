@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     @include('components.admin.head')
+    @yield('page-css')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -20,7 +21,7 @@
                 </ol>
             </section>
 
-            <section class="content">
+            <section id="content" class="content">
                 @yield('content')
             </section>
         </div>

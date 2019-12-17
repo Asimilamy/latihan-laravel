@@ -26,6 +26,12 @@ Route::get('/example', function () {
 
 Route::view('latihan_crud', 'pages.test');
 
+Route::name('item')->group(function () {
+    Route::get('item', ['uses' => 'Master\ItemController@index']);
+    Route::get('item/getDataTable', ['uses' => 'Master\ItemController@getDataTable', 'as' => '.getDataTable']);
+    Route::get('item/form', ['uses' => 'Master\ItemController@form', 'as' => '.form']);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
